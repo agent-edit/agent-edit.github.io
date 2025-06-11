@@ -126,6 +126,7 @@
 						<div class="col-xs-10 text-left menu-1">
 							<ul>
 								<li class="active"><a href="#home">Home</a></li>
+								<li><a href="#Behavior-Editing">Behavior Editing</a></li>
 								<li><a href="#Can-Knowledge-Editing-Really-Correct-Hallucinations">HalluEditBench</a></li>
 								<li><a href="#Can-Editing-LLMs-Inject-Harm">Editing Attack</a></li>
 								<li><a href="#contact">Contact</a></li>
@@ -153,6 +154,7 @@
 							<a href="behavior-editing" target="_blank"> (New Preprint) Model Editing as a Double-Edged Sword: Steering Agent Ethical Behavior Toward Beneficence or Harm </a>
 							<br>
 							- We introduce <b><i>Behavior Editing</i></b>, a novel paradigm that frames ethical behavior steering of LLM agents as a model editing task. Using our psychological-moral-theories-grounded benchmark <b>BehaviorBench</b>, we demonstrate that behavior editing can precisely and effectively steer both benevolent and harmful behaviors, underscoring dual-use concerns in model safety and alignment.
+							<br>
 							<a href="#Can-Knowledge-Editing-Really-Correct-Hallucinations"> (ICLR 2025) Can Knowledge Editing Really Correct Hallucinations?</a>
 							<br>
 							- We proposed <b>HalluEditBench</b> to holistically benchmark knowledge editing methods in correcting real-world hallucinations on five dimensions including Efficacy, Generalization, Portability, Locality, and Robustness. We find their effectiveness could be far from what their performance on existing datasets suggests, and the performance beyond Efficacy for all methods is generally unsatisfactory.
@@ -193,7 +195,7 @@
 							<span class="author-block">
 								<a href="https://david-li0406.github.io/" target="_blank">Dawei Li<sup>2</sup></a>,</span>
 							<span class="author-block">
-								<a href="https://www.linkedin.com/in/ali-payani-59267515/" target="_blank">Ali Payani<sup>6</sup></a>,</span>
+								<a href="https://www.linkedin.com/in/ali-payani-59267515/" target="_blank">Ali Payani<sup>4</sup></a>,</span>
 							<span class="author-block">
 								<a href="http://www.public.asu.edu/~huanliu" target="_blank">Huan Liu<sup>2</sup></a>,</span>
 							<span class="author-block">
@@ -212,7 +214,7 @@
 						<div class="column has-text-centered">
 							<div class="publication-links">
 								<span class="link-block">
-									<a href="#" target="_blank" class="external-link button is-outlined is-primary">
+									<a href="https://arxiv.org" target="_blank" class="external-link button is-outlined is-primary">
 										<span class="button-62">Paper</span>
 									</a>
 								</span>
@@ -309,9 +311,9 @@
 									<div class="grey-box" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background: linear-gradient(to right, #f8f9fa, #e9ecef); text-align: left;">
 										<p style="margin: 0; padding: 15px; font-weight: 500; color: #495057;"><span style="color: #ED7845; font-weight: 700;">Finding 1:</span> Behavior Editing is highly effective for steering scenario-specific behavior, especially when employing parameter-modifying techniques such as ROME and FT-M. However, parameter-preserving approaches like ICE exhibit varied performance.</p>
 									</div>
-									<img src="./static/images/behavior-edit-fig2.png" alt="efficacy" class="img-responsive">
+									<img src="./static/images/behavior/specific.jpg" alt="efficacy" class="img-responsive">
 									<div class="caption">
-										<p><strong>Behavior Editing on MoralChoice</strong>. The "overall" refers to the Efficacy Score (%) on the whole HalluEditBench embracing 9 domains for different methods. The Efficacy Score on each domain is also reported. Efficacy scores (%) are measured by the accuracy on Efficacy Evaluation Question-answer Pairs, where the pre-edit scores of each LLM are ensured 0%.</p>
+										<p>Comparative analysis of model editing techniques across ethical scenarios using BehaviorBench. Subplots (a-c) illustrate results for malicious editing, while subplots (d-f) represent benevolent editing. Each bar indicates the editing Efficacy (%) for a specific editing method applied across various open-weight LLM agents.</p>
 									</div>
 								</div>
 							</div>
@@ -331,6 +333,10 @@
 									<div class="grey-box" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background: linear-gradient(to right, #f8f9fa, #e9ecef); text-align: left;">
 										<p style="margin: 0; padding: 15px; font-weight: 500; color: #495057;"><span style="color: #ED7845; font-weight: 700;">Finding 2:</span> Proprietary LLMs are also vulnerable to malicious editing through ICE, although newer and more reasoning-capable models exhibit improved resistance. Notably, Claude models consistently demonstrate robust moral alignment, particularly against malicious editing attempts.</p>
 									</div>
+									<img src="./static/images/behavior/specific-api.jpg" alt="efficacy" class="img-responsive">
+									<div class="caption">
+										<p>Comparison of editing Efficacy (%) for frontier proprietary LLM agents on low-ambiguity MoralChoice open questions. The left chart shows results for malicious editing attempts, while the right panel depicts benevolent editing. The results illustrate substantial variation in robustness among different proprietary models toward ICE.</p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -339,7 +345,7 @@
 							<div class="panel-heading">
 								<h4 class="panel-title">
 									<a data-toggle="collapse" href="#finding3" class="collapsed" style="display: block; width: 100%;">
-										<b>Finding 3: Impact of Scenario Complexity</b>
+										<b>Finding 3: Moral Alignment Shifts & Impact of Scenario Complexity</b>
 										<i class="icon-chevron-left" style="float: right; transition: transform 0.3s;"></i>
 									</a>
 								</h4>
@@ -349,6 +355,14 @@
 									<div class="grey-box" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background: linear-gradient(to right, #f8f9fa, #e9ecef); text-align: left;">
 										<p style="margin: 0; padding: 15px; font-weight: 500; color: #495057;"><span style="color: #ED7845; font-weight: 700;">Finding 3:</span> Pre-edit moral accuracy decreases as scenario complexity increases, showing the difficulty unedited agents face in complex or ambiguous moral situations.</p>
 									</div>
+									<img src="./static/images/behavior/impact.jpg" alt="efficacy" class="img-responsive">
+									<div class="caption">
+										<p>Impact of Behavior Editing on agents' moral accuracy across various datasets. Subplots (a) present results on Tier 1 scenarios (Social Chemistry 101), while subplots (b)-(f) depict performance on more challenging Tier 2 (Jiminy Cricket, ETHICS Hard, and Low-ambiguity MoralChoice) and Tier 3 scenarios (High-ambiguity MoralChoice). Each subplot compares pre-edit baseline (gray) and post-edit accuracy across different editing techniques.</p>
+									</div>
+									<img src="./static/images/behavior/impact-api.jpg" alt="efficacy" class="img-responsive">
+									<div class="caption">
+										<p>Comparison of pre-edit and post-edit accuracy for frontier LLM agents on low-ambiguity (left) and high-ambiguity (right) MoralChoice open questions. Solid bars indicate pre-edit performance, while hatched bars reflect post-edit accuracy following malicious editing attempts.</p>
+									</div>
 								</div>
 							</div>
 						</div>
@@ -357,7 +371,7 @@
 							<div class="panel-heading">
 								<h4 class="panel-title">
 									<a data-toggle="collapse" href="#finding4" class="collapsed" style="display: block; width: 100%;">
-										<b>Finding 4: Moral Alignment Shifts</b>
+										<b>Finding 4: Editing performance across five Normative Ethics dimensions </b>
 										<i class="icon-chevron-left" style="float: right; transition: transform 0.3s;"></i>
 									</a>
 								</h4>
@@ -366,6 +380,10 @@
 								<div class="panel-body">
 									<div class="grey-box" style="border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); background: linear-gradient(to right, #f8f9fa, #e9ecef); text-align: left;">
 										<p style="margin: 0; padding: 15px; font-weight: 500; color: #495057;"><span style="color: #ED7845; font-weight: 700;">Finding 4:</span> Behavior Editing can induce extensive shifts in an agent's overall moral alignment. Parameter-modifying techniques (e.g., ROME, FT-M) exhibit greater efficacy compared to parameter-preserving methods such as ICE. Proprietary models display similar trends, with more recent models showing increased resilience to malicious editing attempts.</p>
+									</div>
+									<img src="./static/images/behavior/ethics_radar.jpg" alt="efficacy" class="img-responsive">
+									<div class="caption">
+										<p>Editing performance across five Normative Ethics dimensions (Justice, Morality, Morality-hard, Deontology, and Virtue) for LLaMA-2-7B and LLaMA-3-8B. Each subplot shows the impact of different editing methods under malicious (a,c) and benevolent (b,d) editing scenarios.</p>
 									</div>
 								</div>
 							</div>
@@ -1011,7 +1029,7 @@
 				<div class="row copyright">
 					<div class="col-md-12 text-center">
 						<p>
-							Contact: <a href="mailto:baixiang.huang@emory.edu">Baixiang Huang</a>, <a href="mailto:cchen151@hawk.iit.edu">Canyu Chen</a>, <a href="mailto:kai.shu@emory.edu">Kai Shu</a>
+							Contact: <a href="mailto:baixiang.huang@emory.edu">Baixiang Huang</a>
 						</p>
 					</div>
 				</div>
